@@ -1,28 +1,84 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Model Set up
+User
+	has_many Likes
+	# has_many Matches
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+	first_name :string
+	last_name :string
+	age :integer
+	gender :boolean
+	city :string
+	state :string
+	vehicle_type :boolean #automatic or manual
+	description :text
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+like
+	belongs_to User
+
+	user_id
+	likee
+
+
+
+- how are users going to interact?
+ 
+
+
+
+
+INSTRUX
+=======
+
+
+TDD Project - Dating App
+========================
+
+FOCUS - TESTING WITH RSPEC AND FACTORYGIRL INSIDE A FULL RAILS APP
+PAIR PROGRAMMING
+
+1) brainstorming: 
+- draw out database tables (models)
+- how are users going to interact?
+- idea of controllers and CRUD actions
+- idea of how your views will be layed out
+
+2) github: 
+1 person create a github repo for this project
+add the other person as a collaborator
+determine your branches - one working branch for each partner, name/development and how you want to push and pull
+don't work on master!
+
+3) project setup: 
+create a new rails app - (rails new -d postgresql -T)
+add any gems you need - (eg. materialize, devise, simplecov, rspec, factorygirl, ect..)
+PUSH TO GITHUB and SWITCH
+
+4) write your model code: 
+write your user model and specs for it
+write your interest(or whatever) model and add specs for it
+PUSH TO GITHUB and SWITCH
+
+5) write your controller code: 
+write your users controller and the associated CRUD actions
+write specs for your users controller
+PUSH TO GITHUB and SWITCH
+
+write your interests(or whatever) controller and the associated CRUD actions
+write specs for your interests(or whatever) controller
+PUSH TO GITHUB and SWITCH
+
+6) write your view code: 
+your index action should go to your index view
+PUSH TO GITHUB and SWITCH
+your show action should go to your show view
+PUSH TO GITHUB and SWITCH
+your edit action should go to your edit view
+PUSH TO GITHUB and SWITCH
+
+
+***THINGS TO THINK ABOUT***
+commit your code as soon as you have a working piece
+make sure your routes are setup
+make sure you are using postgres as the database
