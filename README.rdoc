@@ -15,10 +15,10 @@ User
 
 
 like
-	belongs_to User
+	belongs_to :User
 
-	user_id
-	likee
+	user_id:integer
+	likee:integer
 
 
 
