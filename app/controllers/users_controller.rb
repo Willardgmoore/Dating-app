@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  
+  def profile
+  end
+
   def index
   end
 
@@ -8,7 +12,9 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def profile
+  def destroy
+  	# @user = User.find(params)
+  	# @user.destroy
   end
-  
+
 end
