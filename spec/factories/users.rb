@@ -1,13 +1,14 @@
 FactoryGirl.define do
-  factory :user do
-    first_name "MyString"
-last_name "MyString"
-age 1
-gender false
-city "MyString"
-state "MyString"
-vehicle_type false
-description "MyText"
+  factory :user, class: User do
+  	sequence(:email) { |n| "user#{n}@example.com" } # More Dave voodoo magic
+    password 'password' 
+    first_name "Billy Bob"
+	last_name "Thorton"
+	age 1
+	gender true
+	city "Somewhere town"
+	state "MyString"
+	vehicle_type true
+	description "MyText"
   end
-
 end
