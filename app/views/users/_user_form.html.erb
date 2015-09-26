@@ -1,0 +1,71 @@
+
+
+<%= form_for :user do |f| %>
+<div class="row">
+    <div class="field col s12 m6">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field col s12 m6">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field col s12 m3">
+      <%= f.label :age %><br />
+      <%= f.number_field :age %>
+    </div>
+
+    <div class="field col s12 m3">
+      <%= f.label :gender %><br />
+      <%= f.text_field :gender %>
+    </div>
+
+    <div class="field col s12 m3">
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+    </div>
+
+    <div class="field col s12 m3">
+      <%= f.label :state %><br />
+      <%= f.text_field :state %>
+    </div>
+  </div><br>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @validatable %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+<!-- TODO: make radio button functional -->
+  <div class="field col s12 m3 center-align"> 
+  What kind of vehicle do you drive?
+    <%= f.radio_button 'vehicle_type', true %>
+    <%= f.label :vehicle_type ,'Manual' %>
+
+    <%= f.radio_button 'vehicle_type', false %>
+    <%= f.label :vehicle_type ,'Automatic' %>
+  </div>
+
+
+  <div class="actions right-align">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+<br>
