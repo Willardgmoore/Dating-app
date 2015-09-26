@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
   
   def profile
+
   end
 
   def index
-  	@users = User.all#where(gender: true)#TODO where gender != current user
+    @users = User.all#where(gender: true)#TODO where gender != current user
   end
 
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
