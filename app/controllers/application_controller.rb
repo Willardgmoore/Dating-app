@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  before_action :authenticate_user,  :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
-  :set_current_user
 
   
   private
@@ -14,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
 	devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:first_name, :last_name, :age, :gender, :city, :state, :vehicle_type) }
-	devise_parameter_sanitizer.for(:account_signup) { |u| u.permit(:first_name, :last_name, :age, :gender, :city, :state, :vehicle_type) }
+	devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :age, :gender, :city, :state, :vehicle_type) }
     # devise_parameter_sanitizer.for(:sign_up) << :first_name, :last_name, :age, :gender, :city, :state, :vehicle_type
     # devise_parameter_sanitizer.for(:account_up) << :first_name, :last_name, :age, :gender, :city, :state, :vehicle_type
   end
