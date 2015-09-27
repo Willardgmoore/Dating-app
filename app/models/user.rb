@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :users
   def self.current
     self.current[:user]
   end
@@ -12,5 +13,4 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :users
 end
