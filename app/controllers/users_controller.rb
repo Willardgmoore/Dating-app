@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_filter :set_current_user
+  # before_filter :set_current_user  #bad practice. Should have been done in the application controller.
 
   def profile
     @user = current_user # Replace current_user with something???!
