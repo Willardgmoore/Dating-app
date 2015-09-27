@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters, if: :devise_controller?
   :set_current_user
 
   
@@ -10,12 +9,13 @@ class ApplicationController < ActionController::Base
   	User.current = set_current_user
   end
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :first_name, :last_name, :age, :gender, :city, :state, :vehicle_type
-    devise_parameter_sanitizer.for(:account_update) << :first_name, :last_name, :age, :gender, :city, :state, :vehicle_type
+    devise_parameter_sanitizer.for(:account_up) << :first_name, :last_name, :age, :gender, :city, :state, :vehicle_type
   end
   
   # Prevent CSRF attacks by raising an exception.
