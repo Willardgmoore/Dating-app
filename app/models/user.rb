@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   def self.current
-    Thread.current[:user]
+    self.current[:user]
   end
   def self.current=(user)
-    Thread.current[:user] = user
+    self.current[:user] = user
   end
-User.current
-User.current=
+# User.current
+# User.current=
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
