@@ -54,11 +54,10 @@
 <!-- TODO: make radio button functional -->
   <div class="field col s12 m3 center-align"> 
   What kind of vehicle do you drive?
-    <%= f.radio_button 'vehicle_type', true %>
-    <%= f.label :vehicle_type ,'Manual' %>
-
-    <%= f.radio_button 'vehicle_type', false %>
-    <%= f.label :vehicle_type ,'Automatic' %>
+    <input class='with-gap' name="group1" type="radio" id="test1" />
+    <label for="test1">Manual</label>
+    <input class='with-gap' name="group1" type="radio" id="test2" />
+    <label for="test2">Automatic</label>   
   </div>
 
 
