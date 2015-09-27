@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :set_current_user
+  # before_filter :set_current_user
 
   def profile
     @user = current_user # Replace current_user with something???!
@@ -48,9 +48,9 @@ class UsersController < ApplicationController
 
   private
 
-  def set_current_user
-    User.current = current_user
-  end
+  # def set_current_user
+  #   User.current = current_user
+  # end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :age, :gender, :city, :state, :vehicle_type)
